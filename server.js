@@ -5,6 +5,11 @@ var app=express();
 var jsonoutput;
 
 
+
+app.get('/', function(req, res){
+    jsonoutput = JSON.stringify({unix: null, natural: null});
+    res.send(jsonoutput);
+})
 app.get('/:name', function(req,res){
 	//if it's not a valid name, then return null
     ///check if it's an integer aka unixtime
@@ -15,7 +20,7 @@ app.get('/:name', function(req,res){
 			         unix:parseInt(arg),
 		             natural: momentDate.format('MMMM DD, YYYY')});
     }
-	else if (arg == "" || Date.parse(arg)==null){
+	else if (Date.parse(arg)==null){
 		jsonoutput = JSON.stringify({unix: null, natural: null});
 	}
     else if (Date.parse(arg)!=null){
