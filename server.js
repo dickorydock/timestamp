@@ -33,7 +33,7 @@ app.get('/:name', function(req,res){
     	momentDate = moment(unixtime).utc();
 		jsonoutput = JSON.stringify({
 			         unix: parseInt(momentDate.format('X')),
-		             natural: momentDate.format('MMMM DD, YYYY')});
+		             natural: momentDate.format('MMMM D, YYYY')});
 	}
 
 	res.send(jsonoutput);
