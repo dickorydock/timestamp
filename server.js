@@ -4,6 +4,7 @@ var app=express();
 
 var jsonoutput;
 
+
 app.get('/:name', function(req,res){
 	//if it's not a valid name, then return null
     ///check if it's an integer aka unixtime
