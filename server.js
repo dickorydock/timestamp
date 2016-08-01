@@ -15,7 +15,7 @@ app.get('/:name', function(req,res){
 			         unix:parseInt(arg),
 		             natural: momentDate.format('MMMM DD, YYYY')});
     }
-	else if (Date.parse(arg)==null){
+	else if (arg == "" || Date.parse(arg)==null){
 		jsonoutput = JSON.stringify({unix: null, natural: null});
 	}
     else if (Date.parse(arg)!=null){
